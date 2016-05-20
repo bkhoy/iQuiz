@@ -28,11 +28,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let defaultAction = UIAlertAction(title: "Check Now", style: .Default, handler: {
             (paramAction:UIAlertAction!) in
-            if let textFields = alertController.textFields {
-                let theTextFields = textFields as [UITextField]
-                let enteredText = theTextFields[0].text
-                if enteredText != nil {
-                    actualURL.targetURL = enteredText!
+            if let inputText = alertController.textFields {
+                let textBox = inputText as [UITextField]
+                let input = textBox[0].text
+                if input != nil {
+                    actualURL.targetURL = input!
                 } else {
                     actualURL.targetURL = "http://tednewardsandbox.site44.com/questions.json"
                 }
